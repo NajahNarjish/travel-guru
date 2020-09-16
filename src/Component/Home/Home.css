@@ -1,0 +1,23 @@
+.cardBackground{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../../images/coxsbazar.png); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 340px;
+    border-radius: 20px;
+        
+}
+
+.sreemangal{
+    background-image: url(../../images/Sreemongol.png);
+
+}
+
+.sundarbans{
+    background-image: url(../../images/sundorbon.png)
+}
