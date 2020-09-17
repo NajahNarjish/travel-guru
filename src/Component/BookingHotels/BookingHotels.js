@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import { CategoryContext } from '../../App';
+import fakeHoteldata from '../../fakedata/fakeHoteldata.js';
+import SingleHotel from '../SingleHotel/SingleHotel';
 
 const BookingHotels = () => {
+    const [name, setName, place, setPlace, loggedInUser, setLoggedInUser] = useContext(CategoryContext);
+// console.log(name);
+    const [hotels, setHotels] = useState([]);
+    useEffect(() =>{
+        // console.log({category});
+        const threeHotels = fakeHoteldata.filter(pd => pd.category.toLowerCase() === name.toLowerCase());
+        setHotels(threeHotels);
+    }, [name])
+
+    // console.log(hotels);
     return (
         <div>
-            <h1>this is hotel list</h1>
+            <hr style={{height:"2px",borderWidth:"0", backgroundColor:"gray", color:"gray"}}></hr>
+
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-12 col-lg-7">
+                        {hotels.map(hotel => <SingleHotel hotel = {hotel}></SingleHotel>)}
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        google map
+                    </div>
+                </div>
+            </div>
+
         </div>
     );
 };

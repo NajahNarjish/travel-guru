@@ -26,7 +26,6 @@ const Booking = () => {
         history.push("/bookingHotels");
     }
 
-
     return (
         <div>
             <div class="container">

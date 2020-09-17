@@ -90,7 +90,10 @@ const handleSubmit = (event)=>{
       newUserInfo.error = "";
       newUserInfo.success = true;
       setUser(newUserInfo);
-      updateUserName(user.name)
+      updateUserName(user.name);
+      
+     setLoggedInUser(newUserInfo);
+      history.replace(from);
     })
     .catch(error => {
       // Handle Errors here.

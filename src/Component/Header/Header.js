@@ -28,7 +28,7 @@ const Header = () => {
                         <li class="nav-item active">
                             
                             <Link to= "/home">
-                                <a class="nav-link" href="#home" style = {{color:"white"}}>Home </a>
+                                <a class="nav-link" href="#home" style = {{color:"black"}}>Home </a>
                             </Link>
                         </li>
                         <li class="nav-item">
@@ -39,10 +39,10 @@ const Header = () => {
                         </li>
                         
                         <li class="nav-item">
-                            {/* <button>Login</button> */}
-                            <a class="nav-link" href="#">
+                            <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={() => setLoggedInUser({})}>Sign out</button>
+                            {/* <a class="nav-link" href="#">
                                 <input class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} type="submit" value="Log In"/>
-                            </a>
+                            </a> */}
                         </li> 
                         <li class="nav-item">
                             <h3>{loggedInUser.email} hi</h3>

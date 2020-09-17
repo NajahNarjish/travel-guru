@@ -13,7 +13,6 @@ import Booking from './Component/Booking/Booking';
 import Login from './Component/Login/Login';
 import BookingHotels from './Component/BookingHotels/BookingHotels';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
-import Test from './Component/Test/Test';
 
 export const CategoryContext = createContext();
 
@@ -29,7 +28,8 @@ function App() {
         console.log(place);
     }, [name])
   return (
-    <div className = "body">
+    // <div className = "body">
+    <div>
     <CategoryContext.Provider value={[name, setName, place, setPlace, loggedInUser, setLoggedInUser]} > 
       <Router>
         <Header></Header>
@@ -41,9 +41,13 @@ function App() {
           <Route path = "/booking">
             <Booking></Booking>
           </Route>
-          <PrivateRoute path= "/bookingHotels">
+          {/* <PrivateRoute path= "/bookingHotels">
             <BookingHotels></BookingHotels>
-          </PrivateRoute>
+          </PrivateRoute> */}
+
+          <Route path= "/bookingHotels">
+            <BookingHotels></BookingHotels>
+          </Route>
          
           
           <Route path = "/login">
