@@ -1,5 +1,6 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import './App.css';
+import fakedata from '../src/fakedata/fakedata'
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,14 +13,19 @@ import Booking from './Component/Booking/Booking';
 
 export const CategoryContext = createContext();
 
-
-
 function App() {
   const [name, setName] = useState("coxs bazar");
   console.log(name);
+  const [place, setPlace] = useState({});
+    useEffect(() =>{
+        const matchedPlace = fakedata.find(pd => pd.destination.toLowerCase() === name.toLowerCase());
+        console.log(matchedPlace);
+        setPlace(matchedPlace);
+        console.log(place);
+    }, [name])
   return (
     <div className = "body">
-    <CategoryContext.Provider value={[name, setName]} > 
+    <CategoryContext.Provider value={[name, setName, place, setPlace]} > 
       <Router>
         <Header></Header>
         
