@@ -4,12 +4,10 @@ import "./Booking.css";
 
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
-    // container: {
-    //   display: 'flex',
-    //   flexWrap: 'wrap',
-    // },
+    
     textField: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
@@ -20,6 +18,15 @@ const useStyles = makeStyles((theme) => ({
 const Booking = () => {
     const classes = useStyles();
     const [name, setName, place, setPlace] = useContext(CategoryContext);
+
+    const history = useHistory();
+
+    const handleStartBooking = () => {
+        console.log("booking started");
+        history.push("/bookingHotels");
+    }
+
+
     return (
         <div>
             <div class="container">
@@ -60,7 +67,7 @@ const Booking = () => {
                                         }}
                                     /> 
                                    
-                                    <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A", width: "400px", margin:"10px"}}>Start Booking</button>     
+                                    <button onClick = {handleStartBooking} class="btn btn-primary" style = {{backgroundColor:"#F9A51A", width: "400px", margin:"10px"}}>Start Booking</button>     
                             </form>
                         </div>
                     </div>

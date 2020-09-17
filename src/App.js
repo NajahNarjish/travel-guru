@@ -10,6 +10,10 @@ import {
 import Header from './Component/Header/Header';
 import Home from './Component/Home/Home';
 import Booking from './Component/Booking/Booking';
+import Login from './Component/Login/Login';
+import BookingHotels from './Component/BookingHotels/BookingHotels';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
+import Test from './Component/Test/Test';
 
 export const CategoryContext = createContext();
 
@@ -17,6 +21,7 @@ function App() {
   const [name, setName] = useState("coxs bazar");
   console.log(name);
   const [place, setPlace] = useState({});
+  const [loggedInUser, setLoggedInUser] = useState({});
     useEffect(() =>{
         const matchedPlace = fakedata.find(pd => pd.destination.toLowerCase() === name.toLowerCase());
         console.log(matchedPlace);
@@ -25,7 +30,7 @@ function App() {
     }, [name])
   return (
     <div className = "body">
-    <CategoryContext.Provider value={[name, setName, place, setPlace]} > 
+    <CategoryContext.Provider value={[name, setName, place, setPlace, loggedInUser, setLoggedInUser]} > 
       <Router>
         <Header></Header>
         
@@ -36,17 +41,16 @@ function App() {
           <Route path = "/booking">
             <Booking></Booking>
           </Route>
-          {/* <PrivateRoute path = "/orders">
-            <Inventory></Inventory>
+          <PrivateRoute path= "/bookingHotels">
+            <BookingHotels></BookingHotels>
           </PrivateRoute>
+         
+          
           <Route path = "/login">
             <Login></Login>
           </Route>
-          <PrivateRoute path = "/shipment">
-            <Shipment></Shipment>
-          </PrivateRoute>
-           */}
-          <Route exact path = "/">
+       
+          <Route exact path = "/" >
             <Home></Home>
           </Route>
           {/* <Route path = "/product/:productKey">

@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom';
 import Booking from '../Booking/Booking.js';
 
 const Home = () => {
-    const [name, setName, place, setPlace] = useContext(CategoryContext);
+    const [name, setName, place, setPlace, loggedInUser, setLoggedInUser] = useContext(CategoryContext);
     // const [place, setPlace] = useState({});
     // useEffect(() =>{
     //     const matchedPlace = fakedata.find(pd => pd.destination.toLowerCase() === name.toLowerCase());
