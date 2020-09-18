@@ -37,7 +37,10 @@ const Header = () => {
                             </li>
                             
                             <li class="nav-item">
-                                <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={() => setLoggedInUser({})}>Sign out</button>
+                                {
+                                    loggedInUser.email ? <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={() => setLoggedInUser({})}>Sign out</button> :
+                                    <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={<Link to="/login"></Link>}>Login</button>
+                                }
                                 
                             </li> 
                             <li class="nav-item">
