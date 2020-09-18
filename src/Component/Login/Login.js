@@ -3,7 +3,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { CategoryContext } from '../../App';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import "./Login.css";
 import google from "../../images/google.png";
@@ -146,6 +146,9 @@ function Login() {
       console.log(error);
     });
   }
+  const changeStatus = () => {
+
+  }
 
   const handleBlur = (event) => {
     let isFieldValid = true;
@@ -206,7 +209,18 @@ function Login() {
             {errors.confirmPassword && <span className="error">Password is required</span>}
 
             <input className="submitButton" type="submit" value={newUser ? "Create an account" : "Login"} />
-            <p style={{ marginTop:"10px"}}>Don't have an account? <span onClick={() => setNewUser("hello")} style={{ color: "green" }}>Create an account</span></p>
+
+            {newUser ? <p style={{ marginTop:"10px"}}>Already have an account? 
+            <span onClick={() => setNewUser("hello")} style={{ color: "green" }}>Login</span>
+            </p> : 
+            <p style={{ marginTop:"10px"}}>Don't have an account? 
+            <span onClick={() => setNewUser("hello")} style={{ color: "green" }}>Create an account</span>
+            </p>}
+
+
+            {/* <p style={{ marginTop:"10px"}}>Don't have an account? 
+            <span onClick={() => setNewUser("hello")} style={{ color: "green" }}>Create an account</span>
+            </p> */}
 
           </form>
           <p style={{ color: "red" }}>{user.error}</p>
