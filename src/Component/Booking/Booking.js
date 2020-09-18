@@ -26,6 +26,7 @@ const Booking = () => {
         history.push("/bookingHotels");
     }
 
+    
     return (
         <div>
             <div class="container">
@@ -39,6 +40,7 @@ const Booking = () => {
                             <form>
                                 <div class="form-group">
                                     <label for="origin">Origin</label>
+                                   
                                     <input type="text" class="form-control" id="origin" placeholder="origin" style={{backgroundColor:"#F2F2F2"}}/>
                                 </div>
                                 <div class="form-group">

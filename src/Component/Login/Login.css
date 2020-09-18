@@ -1,0 +1,33 @@
+.ship-form{
+    margin: 30px 100px;
+    border: 1px solid black;
+    padding: 10px 0;
+}
+
+.ship-form input {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding:5px;
+    border: 1px solid gray;
+    border-radius:5px;
+    width: 300px;
+    
+}
+.error{
+    color: red;
+}
+.googlefbButton{
+    border-radius: 20px;
+}
+
+.googleButton{
+    padding: 5px 40px;
+}
+.submitButton{
+    background-color:#F9A51A; 
+    width: 400px; 
+    margin:20px;
+}
+
+

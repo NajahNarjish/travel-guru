@@ -45,7 +45,7 @@ const Header = () => {
                             </a> */}
                         </li> 
                         <li class="nav-item">
-                            <h3>{loggedInUser.email} hi</h3>
+                            <h3>{loggedInUser.displayName || loggedInUser.name}</h3>
                         </li> 
                     </ul> 
                 </div>
