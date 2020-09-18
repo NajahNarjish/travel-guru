@@ -146,10 +146,7 @@ function Login() {
       console.log(error);
     });
   }
-  const changeStatus = () => {
-
-  }
-
+  
   const handleBlur = (event) => {
     let isFieldValid = true;
     if (event.target.name === "email") {
@@ -187,66 +184,50 @@ function Login() {
       <p>email:{user.email}</p>
       <p>pass:{user.password}</p> */}
 
-          {/* <input type="checkbox" onChange = {()=> setNewUser(!newUser)}name="newUser" id=""/>
-      <label htmlFor="newUser">New User Sign up</label> */}
+          
 
           <form className="ship-form" onSubmit={handleSubmit}>
-            { /* <form className = "ship-form" onSubmit={handleSubmit(onSubmit)}></form> */}
-            {newUser ? <h3>Create an account</h3> : <h3>Login </h3>}
-            {newUser && <input type="text" name='name' onBlur={handleBlur} placeholder="First Name" />}
-            {newUser && <input type="text" name='name' onBlur={handleBlur} placeholder="Last Name" />}
+              {newUser ? <h3>Create an account</h3> : <h3>Login </h3>}
+              {newUser && <input type="text" name='name' onBlur={handleBlur} placeholder="First Name" />}
+              {newUser && <input type="text" name='name' onBlur={handleBlur} placeholder="Last Name" required/>}
 
-            <input name="email" onBlur={handleBlur} defaultValue={loggedInUser.email} ref={register({ required: true })} placeholder="Your email" />
-            {errors.email && <span className="error">Email is required</span>}
+              <input type= "email" name="email" onBlur={handleBlur} defaultValue={loggedInUser.email}  placeholder="Your email" required/>
 
-            {/* <input type="text" name="email" onBlur = {handleBlur} placeholder="Your email" required/> */}
+              <input type = "password" name="password" onBlur={handleBlur}  placeholder="Your password" required/>
 
-            <input name="password" onBlur={handleBlur} ref={register({ required: true })} placeholder="Your password" />
-            {errors.password && <span className="error">Password is required</span>}
-            {/* <input type="password" name="password" onBlur = {handleBlur} placeholder="Your password" required/> */}
+              {newUser && <input type = "password" name="confirmPassword" onBlur={handleBlur} placeholder="Confirm password" required/>}
 
-            {newUser && <input name="confirmPassword" onBlur={handleBlur} ref={register({ required: true })} placeholder="Confirm password" />}
-            {errors.confirmPassword && <span className="error">Password is required</span>}
+              <input className="submitButton" type="submit" value={newUser ? "Create an account" : "Login"} />
 
-            <input className="submitButton" type="submit" value={newUser ? "Create an account" : "Login"} />
-
-            {newUser ? <p style={{ marginTop:"10px"}}>Already have an account? 
-            <span onClick={() => setNewUser("hello")} style={{ color: "green" }}>Login</span>
-            </p> : 
-            <p style={{ marginTop:"10px"}}>Don't have an account? 
-            <span onClick={() => setNewUser("hello")} style={{ color: "green" }}>Create an account</span>
-            </p>}
-
-
-            {/* <p style={{ marginTop:"10px"}}>Don't have an account? 
-            <span onClick={() => setNewUser("hello")} style={{ color: "green" }}>Create an account</span>
-            </p> */}
-
+              {newUser ? <p style={{ marginTop:"10px"}}>Already have an account? 
+              <span onClick={()=> setNewUser(!newUser)} style={{ color: "green" }}> Login</span>
+              </p> : 
+              <p style={{ marginTop:"10px"}}>Don't have an account? 
+              <span onClick={() => setNewUser(!newUser)} style={{ color: "green" }}> Create an account</span>
+              </p>}
           </form>
-          <p style={{ color: "red" }}>{user.error}</p>
-          {user.success && <p style={{ color: "green" }}>User {newUser ? "created" : "logged in"} successfully!</p>}
 
+          {/* <p style={{ color: "red" }}>{user.error}</p>
+          {user.success && <p style={{ color: "green" }}>User {newUser ? "created" : "logged in"} successfully!</p>} */}
 
           <h5>or</h5>
-
           {
             user.isSignedIn ? <button onClick={handleSignOut}>Sign out from google</button> :
               <button className='googlefbButton googleButton' onClick={handleGoogleSignIn}>
                 <img src={google} style={{ width: "5%", paddingRight: "5px" }} alt="" />
-        Continue with Google</button>
+                Continue with Google
+              </button>
           }
-          <br /> <br />
+          <br/><br/>
+          
           <button className='googlefbButton' onClick={handleFBLogin}>
             <img src={facebook} style={{ width: "5%", paddingRight: "5px" }} alt="" />
-        Continue with Facebook</button>
-
-
+              Continue with Facebook
+          </button>
         </div>
         <div class="col-12 col-lg-2"></div>
-
       </div>
     </div>
-
   );
 }
 
