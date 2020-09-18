@@ -28,13 +28,13 @@ const Home = () => {
                     <div class="col-12 col-lg-8">
                         <div class="row">
                             <div class="col-12 col-lg-4">
-                                <div className = "cardBackground coxsbazar" onClick={() => setName("coxs bazar")}><h3 >COX'S Bazar</h3></div>
+                                <div className = "cardBackground coxsbazar" onClick={() => setName("Coxs bazar")}><h3 >COX'S Bazar</h3></div>
                             </div>
                             <div class="col-12 col-lg-4">
-                                <div className = "cardBackground sreemangal" onClick={() => setName("sreemangal")}><h3 >Sreemangal</h3></div>   
+                                <div className = "cardBackground sreemangal" onClick={() => setName("Sreemangal")}><h3 >Sreemangal</h3></div>   
                             </div>
                             <div class="col-12 col-lg-4">
-                                <div className = "cardBackground sundarbans" onClick={() => setName("sundarbans")}><h3 >Sundarbans</h3></div>   
+                                <div className = "cardBackground sundarbans" onClick={() => setName("Sundarbans")}><h3 >Sundarbans</h3></div>   
                             </div>
                         </div>
                     </div>

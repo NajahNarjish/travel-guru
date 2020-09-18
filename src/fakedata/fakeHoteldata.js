@@ -4,8 +4,7 @@ var hotelData = [
         guestsAndBed: "4 guests  2 bedroom  2 beds  2 baths",
         facilities: "Wifi Air conditioning Kitchen",
         cancellation: "Cancellation flexibility available",
-        rating: "4.9(20)",
-        price: "$34/night",
+        ratingAndPrice: "4.9(20) $34/night",
         image: "https://i.imgur.com/4rWebP7.png"
     },
     {   category: 'coxs bazar',
@@ -13,8 +12,7 @@ var hotelData = [
         guestsAndBed: "4 guests  2 bedroom  2 beds  2 baths",
         facilities: "Wifi Air conditioning Kitchen",
         cancellation: "Cancellation flexibility available",
-        rating: "4.8(10)",
-        price: "$52/night",
+        ratingAndPrice: "4.8(10)  $52/night",
         image: "https://i.imgur.com/79ssFzD.png"
     },
     {   category: 'coxs bazar',
@@ -22,17 +20,15 @@ var hotelData = [
         guestsAndBed: "4 guests  2 bedroom  2 beds  2 baths",
         facilities: "Wifi Air conditioning Kitchen",
         cancellation: "Cancellation flexibility available",
-        rating: "4.9(25)",
-        price: "$44/night",
-        image: "https://imgur.com/a/aNH2OGl"
+        ratingAndPrice: "4.9(25)  $44/night",
+        image: "https://i.imgur.com/h3BoshJ.png"
     },
     {   category: 'sreemangal',
         title: 'Nice view wide balcony apartment',
         guestsAndBed: "4 guests  2 bedroom  2 beds  2 baths",
         facilities: "Wifi Air conditioning Kitchen",
         cancellation: "Cancellation flexibility available",
-        rating: "4.9(25))",
-        price: "$34/night",
+        ratingAndPrice: "4.9(25)  $34/night",
         image: "https://i.imgur.com/79ssFzD.png"
     },
     {   category: 'sreemangal',
@@ -40,17 +36,15 @@ var hotelData = [
         guestsAndBed: "4 guests  2 bedroom  2 beds  2 baths",
         facilities: "Wifi Air conditioning Kitchen",
         cancellation: "Cancellation flexibility available",
-        rating: "4.9(20)",
-        price: "$34/night",
-        image: "https://imgur.com/a/aNH2OGl"
+        ratingAndPrice: "4.9(20)  $34/night",
+        image: "https://i.imgur.com/h3BoshJ.png"
     },
     {   category: 'sreemangal',
         title: 'Vacation with all the important facilities',
         guestsAndBed: "4 guests  2 bedroom  2 beds  2 baths",
         facilities: "Wifi Air conditioning Kitchen",
         cancellation: "Cancellation flexibility available",
-        rating: "4.9(20)",
-        price: "$34/night",
+        ratingAndPrice: "4.9(20)  $34/night",
         image: "https://i.imgur.com/4rWebP7.png"
     },
     {   category: 'sundarbans',
@@ -58,17 +52,15 @@ var hotelData = [
         guestsAndBed: "4 guests  2 bedroom  2 beds  2 baths",
         facilities: "Wifi Air conditioning Kitchen",
         cancellation: "Cancellation flexibility available",
-        rating: "4.9(20)",
-        price: "$34/night",
-        image: "https://imgur.com/a/aNH2OGl"
+        ratingAndPrice: "4.9(20)  $34/night",
+        image: "https://i.imgur.com/h3BoshJ.png"
     },
     {   category: 'sundarbans',
         title: 'Complete silence with peaceful nature',
         guestsAndBed: "4 guests  2 bedroom  2 beds  2 baths",
         facilities: "Wifi Air conditioning Kitchen",
         cancellation: "Cancellation flexibility available",
-        rating: "4.9(20)",
-        price: "$34/night",
+        ratingAndPrice: "4.9(20)  $34/night",
         image: "https://i.imgur.com/4rWebP7.png"
     },
     {   category: 'sundarbans',
@@ -76,8 +68,7 @@ var hotelData = [
         guestsAndBed: "4 guests  2 bedroom  2 beds  2 baths",
         facilities: "Wifi Air conditioning Kitchen",
         cancellation: "Cancellation flexibility available",
-        rating: "4.9(20)",
-        price: "$34/night",
+        ratingAndPrice: "4.9(20)  $34/night",
         image: "https://i.imgur.com/79ssFzD.png"
     },
     
