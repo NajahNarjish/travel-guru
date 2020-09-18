@@ -6,8 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { useHistory } from 'react-router-dom';
 
-const useStyles = makeStyles((theme) => ({
-    
+const useStyles = makeStyles((theme) => ({    
     textField: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
@@ -22,11 +21,9 @@ const Booking = () => {
     const history = useHistory();
 
     const handleStartBooking = () => {
-        console.log("booking started");
         history.push("/bookingHotels");
     }
-
-    
+ 
     return (
         <div>
             <div class="container">
@@ -39,8 +36,7 @@ const Booking = () => {
                         <div className="bookingForm">
                             <form>
                                 <div class="form-group">
-                                    <label for="origin">Origin</label>
-                                   
+                                    <label for="origin">Origin</label> 
                                     <input type="text" class="form-control" id="origin" placeholder="origin" style={{backgroundColor:"#F2F2F2"}}/>
                                 </div>
                                 <div class="form-group">

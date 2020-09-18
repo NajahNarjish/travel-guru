@@ -2,12 +2,12 @@ import React, { useContext, useState, useEffect } from 'react';
 import fakedata from '../../fakedata/fakedata.js';
 import "./Home.css";
 import { CategoryContext } from '../../App.js';
-import { Link, useHistory } from 'react-router-dom';
-import Booking from '../Booking/Booking.js';
+import { Link} from 'react-router-dom';
+
 
 const Home = () => {
     const [name, setName, place, setPlace, loggedInUser, setLoggedInUser] = useContext(CategoryContext);
-    const history = useHistory();
+   
     return (
         <div>
             <div class="container">
@@ -17,8 +17,7 @@ const Home = () => {
                         <p>{place.description}</p>
                             <Link to= "/booking">
                                 <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}}>Booking</button>
-                            </Link>
-                            
+                            </Link>       
                     </div>
                     <div class="col-12 col-lg-8">
                         <div class="row">

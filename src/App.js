@@ -18,17 +18,13 @@ export const CategoryContext = createContext();
 
 function App() {
   const [name, setName] = useState("coxs bazar");
-  console.log(name);
   const [place, setPlace] = useState({});
   const [loggedInUser, setLoggedInUser] = useState({});
     useEffect(() =>{
         const matchedPlace = fakedata.find(pd => pd.destination.toLowerCase() === name.toLowerCase());
-        console.log(matchedPlace);
         setPlace(matchedPlace);
-        console.log(place);
     }, [name])
   return (
-    // <div className = "body">
     <div>
     <CategoryContext.Provider value={[name, setName, place, setPlace, loggedInUser, setLoggedInUser]} > 
       <Router>
@@ -47,7 +43,6 @@ function App() {
           <Route path = "/login">
             <Login></Login>
           </Route>
-       
           <Route exact path = "/" >
             <Home></Home>
           </Route>
