@@ -21,10 +21,6 @@ function Login() {
     password: '',
   })
 
-  const { register, watch, errors } = useForm();
-  const onSubmit = data => console.log(data);
-  console.log(watch("example")); // watch input value by passing the name of it
-
   const [name, setName, place, setPlace, loggedInUser, setLoggedInUser] = useContext(CategoryContext);
   const googleProvider = new firebase.auth.GoogleAuthProvider();
   const fbprovider = new firebase.auth.FacebookAuthProvider();
@@ -36,7 +32,6 @@ function Login() {
     firebase.auth().signInWithPopup(fbprovider).then(function (result) {
       var token = result.credential.accessToken;
       let user = result.user;
-      // console.log("fb signed in", user);
       setUser(user);
       setLoggedInUser(user);
       history.replace(from);
@@ -46,8 +41,6 @@ function Login() {
       var errorMessage = error.message;
       var email = error.email;
       var credential = error.credential;
-      //  console.log(errorMessage);
-      // ...
     });
   }
 
@@ -85,11 +78,9 @@ function Login() {
         setUser(signedOutUser);
       })
       .catch(err => {
-
       })
   }
   const handleSubmit = (event) => {
-    //   console.log(user.email && user.password);
     if (newUser && user.email && user.password) {
       firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
         .then(res => {
@@ -98,19 +89,16 @@ function Login() {
           newUserInfo.success = true;
           setUser(newUserInfo);
           updateUserName(user.name);
-
           setLoggedInUser(newUserInfo);
           history.replace(from);
         })
         .catch(error => {
-          // Handle Errors here.
           const newUserInfo = { ...user };
           newUserInfo.error = error.message;
           newUserInfo.success = false;
           setUser(newUserInfo);
         });
     }
-
     if (!newUser && user.email && user.password) {
       firebase.auth().signInWithEmailAndPassword(user.email, user.password)
         .then(res => {
@@ -120,12 +108,8 @@ function Login() {
           setUser(newUserInfo);
           setLoggedInUser(newUserInfo);
           history.replace(from);
-
-
-          //   console.log("sign in user info", res.user);
         })
         .catch(error => {
-          // Handle Errors here.
           const newUserInfo = { ...user };
           newUserInfo.error = error.message;
           newUserInfo.success = false;
@@ -137,11 +121,10 @@ function Login() {
 
   const updateUserName = name => {
     const user = firebase.auth().currentUser;
-
     user.updateProfile({
       displayName: name
     }).then(function () {
-      console.log("username updated successfully");
+      
     }).catch(function (error) {
       console.log(error);
     });
@@ -163,30 +146,14 @@ function Login() {
       setUser(newUserInfo);
     }
   }
-  console.log(newUser);
+  
   return (
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-2"></div>
         <div class="col-12 col-lg-8 " style={{ textAlign: 'center' }}>
 
-
-          {/* {
-        user.isSignedIn && <div>
-          <p>Welcome {user.name}</p>
-          <p>Your email is {user.email}</p>
-          <img src={user.photo} alt=""/>
-        </div>
-      } */}
-
-          {/* submit button with form */}
-          {/* <h1>Our own authentication</h1>
-      <p>email:{user.email}</p>
-      <p>pass:{user.password}</p> */}
-
-          
-
-          <form className="ship-form" onSubmit={handleSubmit}>
+          <form className="booking-form" onSubmit={handleSubmit}>
               {newUser ? <h3>Create an account</h3> : <h3>Login </h3>}
               {newUser && <input type="text" name='name' onBlur={handleBlur} placeholder="First Name" />}
               {newUser && <input type="text" name='name' onBlur={handleBlur} placeholder="Last Name" required/>}
@@ -206,9 +173,6 @@ function Login() {
               <span onClick={() => setNewUser(!newUser)} style={{ color: "green" }}> Create an account</span>
               </p>}
           </form>
-
-          {/* <p style={{ color: "red" }}>{user.error}</p>
-          {user.success && <p style={{ color: "green" }}>User {newUser ? "created" : "logged in"} successfully!</p>} */}
 
           <h5>or</h5>
           {

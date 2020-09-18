@@ -6,15 +6,13 @@ import MapContainer from '../MapContainer/MapContainer';
 
 const BookingHotels = () => {
     const [name, setName, place, setPlace, loggedInUser, setLoggedInUser] = useContext(CategoryContext);
-// console.log(name);
     const [hotels, setHotels] = useState([]);
-    useEffect(() =>{
-        // console.log({category});
+
+    useEffect(() =>{      
         const threeHotels = fakeHoteldata.filter(pd => pd.category.toLowerCase() === name.toLowerCase());
         setHotels(threeHotels);
     }, [name])
 
-    // console.log(hotels);
     return (
         <div>
             <hr style={{height:"2px",borderWidth:"0", backgroundColor:"gray", color:"gray"}}></hr>
