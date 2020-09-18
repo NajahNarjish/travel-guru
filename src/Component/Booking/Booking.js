@@ -33,7 +33,7 @@ const Booking = () => {
                 <div class="row mt-5">
                     <div class="col-12 col-lg-6">
                         <h1>{place.destination}</h1>
-                        <p>{place.description}</p>
+                        <p>{place.detail}</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <div className="bookingForm">

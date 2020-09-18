@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect } from 'react';
 import './App.css';
-import fakedata from '../src/fakedata/fakedata'
+import fakedata from '../src/fakedata/fakedata';
 import {
   BrowserRouter as Router,
   Switch,
@@ -44,12 +44,6 @@ function App() {
           <PrivateRoute path= "/bookingHotels">
             <BookingHotels></BookingHotels>
           </PrivateRoute>
-
-          {/* <Route path= "/bookingHotels">
-            <BookingHotels></BookingHotels>
-          </Route> */}
-         
-          
           <Route path = "/login">
             <Login></Login>
           </Route>
@@ -57,9 +51,6 @@ function App() {
           <Route exact path = "/" >
             <Home></Home>
           </Route>
-          {/* <Route path = "/product/:productKey">
-            <ProductDetail></ProductDetail>
-          </Route>  */}
           <Route path = "*">
               <h1>Sorry, page not found</h1>
               <h2>404 error</h2>

@@ -7,13 +7,7 @@ import Booking from '../Booking/Booking.js';
 
 const Home = () => {
     const [name, setName, place, setPlace, loggedInUser, setLoggedInUser] = useContext(CategoryContext);
-    // const [place, setPlace] = useState({});
-    // useEffect(() =>{
-    //     const matchedPlace = fakedata.find(pd => pd.destination.toLowerCase() === name.toLowerCase());
-    //     console.log(matchedPlace);
-    //     setPlace(matchedPlace);
-    //     console.log(place);
-    // }, [name])
+    const history = useHistory();
     return (
         <div>
             <div class="container">
@@ -24,17 +18,25 @@ const Home = () => {
                             <Link to= "/booking">
                                 <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}}>Booking</button>
                             </Link>
+                            
                     </div>
                     <div class="col-12 col-lg-8">
                         <div class="row">
                             <div class="col-12 col-lg-4">
-                                <div className = "cardBackground coxsbazar" onClick={() => setName("Coxs bazar")}><h3 >COX'S Bazar</h3></div>
+                                <Link to= "/booking">
+                                    <div className = "cardBackground coxsbazar" onClick={() => setName("Coxs bazar")}><h3 >COX'S Bazar</h3></div>
+                                </Link>
                             </div>
                             <div class="col-12 col-lg-4">
-                                <div className = "cardBackground sreemangal" onClick={() => setName("Sreemangal")}><h3 >Sreemangal</h3></div>   
+                                <Link to= "/booking">
+                                    <div className = "cardBackground sreemangal" onClick={() => setName("Sreemangal")}><h3 >Sreemangal</h3></div> 
+                                </Link>  
+  
                             </div>
                             <div class="col-12 col-lg-4">
-                                <div className = "cardBackground sundarbans" onClick={() => setName("Sundarbans")}><h3 >Sundarbans</h3></div>   
+                                <Link to= "/booking">
+                                    <div className = "cardBackground sundarbans" onClick={() => setName("Sundarbans")}><h3 >Sundarbans</h3></div>
+                                </Link>   
                             </div>
                         </div>
                     </div>

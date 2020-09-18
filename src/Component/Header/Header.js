@@ -40,12 +40,10 @@ const Header = () => {
                         
                         <li class="nav-item">
                             <button class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} onClick={() => setLoggedInUser({})}>Sign out</button>
-                            {/* <a class="nav-link" href="#">
-                                <input class="btn btn-primary" style = {{backgroundColor:"#F9A51A"}} type="submit" value="Log In"/>
-                            </a> */}
+                            
                         </li> 
                         <li class="nav-item">
-                            <h3>{loggedInUser.displayName || loggedInUser.name}</h3>
+                            <h6 style = {{marginLeft:"5px"}}>{loggedInUser.displayName || loggedInUser.name}</h6>
                         </li> 
                     </ul> 
                 </div>
